@@ -351,3 +351,19 @@ JavaScript
 myElement.style.display = 'none';
 myElement.style.display = null;
 ```
+
+**Window (Viewport) Dimensions**
+
+jQuery
+
+```js
+var height = $(window).height();   
+var width = $(window).width();   
+```
+
+JavaScript
+
+```js
+var width = window.innerWidth   || document.documentElement.clientWidth  || document.body.clientWidth;
+var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+```
