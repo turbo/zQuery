@@ -52,6 +52,22 @@ fetch('path/to/whatever', {
 );
 ```
 
+**Bind**
+
+jQuery
+
+```js
+$(".foo").bind("contextmenu", function (event) { /* do something */ });
+$(".foo").click(function (event) { /* do something */ });
+```
+
+JavaScript
+
+```js
+document.querySelector(".foo").addEventListener("contextmenu", function (event) { /* do something */ });
+document.querySelector(".foo").addEventListener('click', function() { /* do something */ });
+```
+
 **DOM Ready**
 
 jQuery
