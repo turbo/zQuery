@@ -222,7 +222,7 @@ $(myMultipleElements).filter('.some-class-here');
 JavaScript
 
 ```js
-Array.from(myMultipleElements).filter(x => x.classList.contains('some-class-here'));
+[...myMultipleElements].filter(x => x.classList.contains('some-class-here'));
 ```
 
 **Element Find**
@@ -238,7 +238,7 @@ JavaScript
 
 ```js
 const x = myElement.querySelectorAll('.foo');
-const y = Array.from(myMultipleElements).map(x => Array.from(x.querySelectorAll('.foo'))).reduce((a, b) => a.concat(b));
+const y = [...myMultipleElements].map(x => [...x.querySelectorAll('.foo')]).reduce((a, b) => [...a, ...b]);
 ```
 
 **Element Listeners**
@@ -270,7 +270,7 @@ JavaScript
 
 ```js
 myElement.parentElement;
-Array.from(myMultipleElements).map(x => x.closest('.foo')); // all parents
+[...myMultipleElements].map(x => x.closest('.foo')); // all parents
 ```
 
 **Element Siblings**
@@ -284,7 +284,7 @@ $(myElement).siblings();
 JavaScript
 
 ```js
-Array.from(myElement.parentElement.children).filter(x => x !== myElement);
+[...myElement.parentElement.children].filter(x => x !== myElement);
 ```
 
 **Element Sibling Navigation**
