@@ -7,11 +7,12 @@ Here you find pure JavaScript alternatives to jQuery things and some neat JS hac
 jQuery
 
 ```js
-$.ajax({
-  url: 'path/to/json',
-  success: data  => {/* use 'data' here */},
-  error:   error => {/* use 'error' here */}
-});
+$.get(
+  'path/to/json',
+  data => {/* use 'data' here */}
+).error(
+  error => {/* use 'error' here */}
+);
 ```
 
 JavaScript (+[fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), +[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise))
@@ -28,14 +29,13 @@ fetch('/path/to/json')
 jQuery
 
 ```js
-$.ajax({
-  url: 'https://example.com/api',
-  type: 'POST',
-    contentType: 'application/json',
-    data: JSON.stringify(myObjectHere),
-    success: data => {/* use 'data' here */ },
-    error: error  => {/* use 'error' here */}
-});
+$.post(
+  'https://example.com/api',
+  JSON.stringify(myObjectHere),
+  data => {/* use 'data' here */ }
+).error(
+  error => {/* use 'error' here */}
+);
 ```
 
 JavaScript (+[fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), +[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise))
