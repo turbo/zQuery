@@ -1,8 +1,10 @@
 # z(ero)Query
 
-Here you find pure JavaScript alternatives to jQuery things and some neat JS hacks. With content from [here](https://github.com/ndugger/youdontneedjquery).
+Here you find pure JavaScript alternatives to jQuery things and some neat JS hacks. With content from [here](https://github.com/ndugger/youdontneedjquery). 
 
-**AJAX GET**
+You can share this repo here as [git.io/zQuery](http://git.io/zQuery).
+
+## AJAX GET
 
 jQuery
 
@@ -24,7 +26,7 @@ fetch('/path/to/json')
 .catch(error => {/* use 'error' here */});
 ```
 
-**AJAX POST**
+## AJAX POST
 
 jQuery
 
@@ -52,7 +54,7 @@ fetch('path/to/whatever', {
 );
 ```
 
-**Bind**
+## Bind
 
 jQuery
 
@@ -68,7 +70,7 @@ document.querySelector(".foo").addEventListener("contextmenu", function (event) 
 document.querySelector(".foo").addEventListener('click', function() { /* do something */ });
 ```
 
-**DOM Ready**
+## DOM Ready
 
 jQuery
 
@@ -79,14 +81,16 @@ $(document).ready(function() {
 ```
 
 ```js
-function _(f){/in/.test(document.readyState)?setTimeout('_('+f+')',9):f()}_(function(){
+function onDOMReady(f){/in/.test(document.readyState)?setTimeout(arguments.callee.name+'('+f+')',9):f()}
+
+onDOMReady(function(){
   alert("DOM ready.");
 });
 ```
 
 This is faster than other JS (intrinsic) functions, but still slower than just putting the JS at the end of your HTML file. Further, this works in IE8, whereas other solutions don't.
 
-**DOM Query**
+## DOM Query
 
 jQuery
 
@@ -101,7 +105,7 @@ const myElement          = document.querySelector('.foo');
 const myMultipleElements = document.querySelectorAll('.foo');
 ```
 
-**Element Attributes**
+## Element Attributes
 
 jQuery
 
@@ -117,7 +121,7 @@ const foo = myElement.getAttribute('foo');
 myElement.setAttribute('bar', foo);
 ```
 
-**Element Childs**
+## Element Childs
 
 jQuery
 
@@ -131,7 +135,7 @@ JavaScript
 myElement.children;
 ```
 
-**Element Child Manipulation**
+## Element Child Manipulation
 
 jQuery
 
@@ -149,7 +153,7 @@ myElement.insertBefore(anotherElement, myElement.firstChild);
 myElement.remove();
 ```
 
-**Element Class**
+## Element Class
 
 jQuery
 
@@ -167,7 +171,7 @@ myElement.classList.remove('foo');
 myElement.classList.toggle('foo');
 ```
 
-**Element Content**
+## Element Content
 
 jQuery
 
@@ -183,7 +187,7 @@ myElement.textContent = 'lorem ipsum';
 myElement.innerHTML = '<span>lorem ipsum</span>';
 ```
 
-**Element Data Attributes**
+## Element Data Attributes
 
 jQuery
 
@@ -197,7 +201,7 @@ JavaScript
 myElement.dataset.foo = 'bar';
 ```
 
-**Element Foreach**
+## Element Foreach
 
 jQuery
 
@@ -211,7 +215,7 @@ JavaScript
 Array.from(myMultipleElements).forEach((x, i) => {/* use 'x' here */});
 ```
 
-**Element Filters**
+## Element Filters
 
 jQuery
 
@@ -225,7 +229,7 @@ JavaScript
 [...myMultipleElements].filter(x => x.classList.contains('some-class-here'));
 ```
 
-**Element Find**
+## Element Find
 
 jQuery
 
@@ -241,7 +245,7 @@ const x = myElement.querySelectorAll('.foo');
 const y = [...myMultipleElements].map(x => [...x.querySelectorAll('.foo')]).reduce((a, b) => [...a, ...b]);
 ```
 
-**Element Listeners**
+## Element Listeners
 
 jQuery
 
@@ -257,7 +261,7 @@ myElement.addEventListener('click', myEventHandler);
 myElement.removeEventListener('click', myEventHandler);
 ```
 
-**Element Parent**
+## Element Parent
 
 jQuery
 
@@ -273,7 +277,7 @@ myElement.parentElement;
 [...myMultipleElements].map(x => x.closest('.foo')); // all parents
 ```
 
-**Element Siblings**
+## Element Siblings
 
 jQuery
 
@@ -287,7 +291,7 @@ JavaScript
 [...myElement.parentElement.children].filter(x => x !== myElement);
 ```
 
-**Element Sibling Navigation**
+## Element Sibling Navigation
 
 jQuery
 
@@ -303,7 +307,7 @@ myElement.nextElementSibling;
 myElement.previousElementSibling;
 ```
 
-**Element Styles**
+## Element Styles
 
 jQuery
 
@@ -320,7 +324,7 @@ myElement.style.background = 'red';
 myElement.style.color = 'white';
 ```
 
-**Element Value**
+## Element Value
 
 jQuery
 
@@ -336,7 +340,7 @@ const value = myElement.value;
 myElement.value = 'foo';
 ```
 
-**Element Visibility**
+## Element Visibility
 
 jQuery
 
@@ -352,7 +356,7 @@ myElement.style.display = 'none';
 myElement.style.display = null;
 ```
 
-**Window (Viewport) Dimensions**
+## Window (Viewport) Dimensions
 
 jQuery
 
