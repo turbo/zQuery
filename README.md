@@ -1,8 +1,42 @@
 # z(ero)Query
 
-Here you find pure JavaScript alternatives to jQuery things and some neat JS hacks. With content from [here](https://github.com/ndugger/youdontneedjquery). 
+**What is zQuery**
 
-You can share this repo here as [git.io/zQuery](http://git.io/zQuery).
+zQuery is a cheatsheet for
+
+- Vanilla JS alternatives to common jQuery constructs, and
+- neat JS hacks in general.
+
+**You can share this repo here as [git.io/zQuery](http://git.io/zQuery).**
+
+**Contribute**
+
+If you know some neat JS hacks, feel free to send a PR. Hardly anything is too crazy as long as it's useful. zQuery already contains all of [youdontneedjquery](https://github.com/ndugger/youdontneedjquery).
+
+**Contents**
+
+1. [AJAX GET](#ajax-get)
+2. [AJAX POST](#ajax-post)
+3. [Bind](#bind)
+4. [DOM Ready](#dom-ready)
+5. [DOM Query](#dom-query)
+6. [Element Attributes](#element-attributes)
+7. [Element Childs](#element-childs)
+8. [Element Child Manipulation](#element-child-manipulation)
+9. [Element Class](#element-class)
+10. [Element Content](#element-content)
+11. [Element Data Attributes](#element-data-attributes)
+12. [Element Foreach](#element-foreach)
+13. [Element Filters](#element-filters)
+14. [Element Find](#element-find)
+15. [Element Listeners](#element-listeners)
+16. [Element Parent](#element-parent)
+17. [Element Siblings](#element-siblings)
+18. [Element Sibling Navigation](#element-sibling-navigation)
+19. [Element Styles](#element-styles)
+20. [Element Value](#element-value)
+21. [Element Visibility](#element-visibility)
+22. [Window (Viewport) Dimensions](#window-viewport-dimensions)
 
 ## AJAX GET
 
@@ -80,6 +114,8 @@ $(document).ready(function() {
 });
 ```
 
+JavaScript (old)
+
 ```js
 function onDOMReady(f){/in/.test(document.readyState)?setTimeout(arguments.callee.name+'('+f+')',9):f()}
 
@@ -89,6 +125,14 @@ onDOMReady(function(){
 ```
 
 This is faster than other JS (intrinsic) functions, but still slower than just putting the JS at the end of your HTML file. Further, this works in IE8, whereas other solutions don't.
+
+JavaScript (HTML5)
+
+```js
+document.addeventListener('DOMContentLoaded', () => {
+  alert("DOM ready.");
+});
+```
 
 ## DOM Query
 
